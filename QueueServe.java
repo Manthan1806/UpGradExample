@@ -49,15 +49,9 @@ public class QueueServe
 		Scanner in = new Scanner(System.in);
 		System.out.println("Enter the Input Size : ");
 		int size = in.nextInt();
-		Marks[] marks = new Marks[size];
 		String name;
 		int token;
 		double cgpa;
-		int j=0;
-		for(int i=0;i<size;i++)
-		{
-			marks[i] = new Marks(-1.00,"",0);
-		}
 		for(int i=0;i<size+1;i++)
 		{
 			String input = in.nextLine();
@@ -67,10 +61,7 @@ public class QueueServe
 				name = split[1];
 				cgpa = Double.parseDouble(split[2]);
 				token = Integer.parseInt(split[3]);
-				marks[j] = new Marks(cgpa, name, token);
-				Arrays.sort(marks);
 				queue.add(new Marks(cgpa, name, token));
-				j++;
 			}
 			else if(split[0].equals("SERVED"))
 			{
